@@ -25,8 +25,10 @@ MinStack.prototype.push = function(val) {
  */
 MinStack.prototype.pop = function() {
     if(this.stack.length > 0){
-        this.stack.pop()
-        this.minStack.pop()
+        let temp = this.stack.pop()
+        if(temp == this.minStack[this.minStack.length -1]){
+            this.minStack.pop()
+        }
     }
 };
 
@@ -58,13 +60,13 @@ MinStack.prototype.getMin = function() {
 
 //test
 //input: ["MinStack","push","push","push","getMin","top","pop","getMin"]
-//       [[],[-2],[0],[-3],[],[],[],[]]
-//expected: [null,null,null,null,-3,-3,null,-2]
+//       [[],[-2],[0],[-1],[],[],[],[]]
+//expected: [null,null,null,null,-2,-1,null,-2]
 
 var obj = new MinStack()
 obj.push(-2)
 obj.push(0)
-obj.push(-3)
+obj.push(-1)
 console.log(obj.getMin())
 console.log(obj.top())
 obj.pop()

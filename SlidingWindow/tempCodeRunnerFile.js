@@ -1,0 +1,1 @@
+var Deque = require("collections/deque");
