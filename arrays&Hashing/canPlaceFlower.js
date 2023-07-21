@@ -7,37 +7,38 @@ var canPlaceFlowers = function(flowerbed, n) {
 
     if(flowerbed.length == 1 && flowerbed[0] == 0 && n == 1) return true
 
-    
-    for(let i = 0; i < flowerbed.length; i++){
+    let ptr = 0
 
-        if(n > 0){
-            if(flowerbed[i] == 1) continue
+    while(ptr <= flowerbed.length-1 && n > 0){
 
-        if(i == 0 && flowerbed[i+1] == 0){
-            console.log('here')
-            flowerbed[i] = 1
-            n--
-        }else if(i == flowerbed.length - 1 && flowerbed[i-1] == 0){
-            flowerbed[i] = 1
-            n--
+        console.log(ptr +"floer: " + flowerbed[ptr])
+
+        if(flowerbed[ptr] == 1){
+            ptr+=2
         }
 
-        else if(flowerbed[i-1] == 0 && flowerbed[i+1] == 0){
-            flowerbed[i] = 1
+        else if(flowerbed[ptr] == 0 && flowerbed[ptr + 1] == 0 ){
             n--
+            ptr+=2
         }
+
+        else if(ptr == flowerbed.length-1 && flowerbed[ptr] == 0){
+            n--
+            ptr++
+        }
+
+        else{
+            ptr++
         }
 
     }
 
-   
-
-    if(n == 0) return true
-
-    return false
+    return n == 0
+ 
 
 };
 
 //tests
 //[0,0,1,0,1]
-console.log(canPlaceFlowers([0,0,1,0,0], 1)) //true
+// console.log(canPlaceFlowers([0,0,1,0,0], 1)) //true
+console.log(canPlaceFlowers([1,0,0,0,1,0,0], 2))

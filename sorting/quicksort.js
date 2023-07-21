@@ -1,3 +1,8 @@
+//Complexity: O(n log n)
+//Average: O(n log n)
+//Best: O(n log n)
+//Worst: O(n^2)
+//Space: O(log n)
 const quickSort = (arr) => {
 
     if(arr.length <= 1) return arr

@@ -1,1 +1,1 @@
-.join('')
+ k = k % nums.length

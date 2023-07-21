@@ -1,3 +1,9 @@
+//Complexity: O(nlogn)
+//Average: O(nlogn)
+//Best: O(nlogn)
+//Worst: O(nlogn)
+//Space: O(n)
+
 const mergeSort = (arr) => {
 
     if(arr.length <= 1) return arr
