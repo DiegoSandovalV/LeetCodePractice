@@ -31,7 +31,7 @@ const getMid = (head) => {
     }
 
     let mid = slow.next;
-    slow.next = null; // Break the list into two halves
+    slow.next = null; 
     return mid;
 };
 
@@ -47,7 +47,7 @@ const reverseList = (head) => {
         curr = temp;
     }
 
-    return prev; // Return the new head of the reversed list
+    return prev; 
 };
 
 // Merge two lists alternatively
